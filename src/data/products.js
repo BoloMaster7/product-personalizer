@@ -28,7 +28,7 @@ const productsData = [
 ];
 
 
-export const data = productsData.map(product => {
+ export const data = productsData.map(product => {
 	return {
 		key: product.id,
 		name: product.name,
@@ -38,6 +38,5 @@ export const data = productsData.map(product => {
 		basePrice: product.basePrice
 	};
 });
-console.log('productsData',productsData);
 
 export default productsData;
