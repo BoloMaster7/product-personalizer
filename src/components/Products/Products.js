@@ -5,12 +5,12 @@ import data from '../../data/products';
 
 const Products = () => {
   const [products]  = useState(productsData);
-console.console.log(data);
+//console.console.log(data);
   return (
     <section> 
-        {products.map((products) => (
+        {products.map((data) => (
           <Product key={products.name}
-            {...products[0]}
+            {...data}
           />
         ))}
     </section>
