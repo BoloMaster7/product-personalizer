@@ -27,20 +27,4 @@ const productsData = [
   }
 ];
 
-
- export const data = productsData.map(product => {
-	return {
-		key: product.id,
-		name: product.name,
-		title: product.title,
-		colors: product.colors,
-		sizes: product.sizes,
-		basePrice: product.basePrice
-	};
-});
-
-export const color = productsData.map(({ colors }) => colors)
-
-
-
 export default productsData;
