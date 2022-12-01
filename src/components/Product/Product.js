@@ -6,11 +6,19 @@ import { useState } from 'react';
 
 const Product = props => {
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
-  const [currentColor, setCurrentColor] = useState(props.colors[0])
+  const [currentColor, setCurrentColor] = useState(props.colors[0]);
+  const [currentPrice, setCurentPrice] = useState(props.sizes[0].additionalPrice);
+
+  function getPrice() {
+    return  props.basePrice+ setCurentPrice;
+   }
 
   const prepareColorClassName = color => {
     return styles['color' + color[0].toUpperCase() + color.substr(1).toLowerCase()];
   }
+
+ 
+  console.log('getPrice', getPrice)
 
   return (
     <article className={styles.product}>
