@@ -9,7 +9,9 @@ const Products = () => {
   return (
     <section> 
         {products.map((data) => (
-          <Product key={products.name}
+
+          <Product key={products.id} title={products.title} price={products.basePrice}colors={products.colors}
+    
             {...data}
           />
         ))}

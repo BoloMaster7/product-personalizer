@@ -39,4 +39,8 @@ const productsData = [
 	};
 });
 
+export const color = productsData.map(({ colors }) => colors)
+
+
+
 export default productsData;
