@@ -7,11 +7,20 @@ import { useState } from 'react';
 const Product = props => {
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
-  const [currentPrice, setCurentPrice] = useState(props.sizes[0].additionalPrice);
+  const [currentPrice, setCurrentPrice] = useState(props.sizes[0].additionalPrice);
+
+  const cardData ={
+     name: props.title,
+     price: getPrice(),
+     size: currentSize,
+     color: currentColor
+
+  }
 
   function getPrice() {
-    return  props.basePrice+ setCurentPrice;
+    return  props.basePrice+ currentPrice;
    }
+   console.log('getPrice', getPrice)
 
   const prepareColorClassName = color => {
     return styles['color' + color[0].toUpperCase() + color.substr(1).toLowerCase()];
@@ -31,7 +40,7 @@ const Product = props => {
       <div>
         <header>
           <h2 className={styles.name}>{props.title}</h2>
-          <span className={styles.price}>{props.basePrice}$</span>
+          <span className={styles.price}>Price: {getPrice()}$</span>
         </header>
         <form>
           <div className={styles.sizes}>
@@ -41,7 +50,7 @@ const Product = props => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => setCurrentSize(size.name)}
+                    onClick={() => {setCurrentSize(size.name); setCurrentPrice(size.additionalPrice)}}
                     className={clsx(size.name === currentSize && styles.active)}
                   >
                     {size.name}
