@@ -14,20 +14,16 @@ const Product = props => {
      price: getPrice(),
      size: currentSize,
      color: currentColor
-
   }
 
   function getPrice() {
     return  props.basePrice+ currentPrice;
    }
-   console.log('getPrice', getPrice)
+  //  console.log('getPrice', getPrice)
 
   const prepareColorClassName = color => {
     return styles['color' + color[0].toUpperCase() + color.substr(1).toLowerCase()];
   }
-
- 
-  console.log('getPrice', getPrice)
 
   return (
     <article className={styles.product}>
@@ -72,8 +68,9 @@ const Product = props => {
                 </li>
               ))}
             </ul>
-          </div>
-          <Button className={styles.button}>
+          </div>          
+          <Button onClick={(e) => {e.preventDefault(); console.log('cardData', cardData)}} 
+          className={styles.button}>
             <span className="fa fa-shopping-cart" />
           </Button>
         </form>
