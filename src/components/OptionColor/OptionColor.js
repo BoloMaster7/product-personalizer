@@ -16,10 +16,11 @@ const OptionColor = props => {
             <ul className={styles.choices}>
               {props.colors.map(color => (
                 <li>
-                  <button
+                  <Button
                     type="button"
-                    onClick={() => setCurrentColor(color)}
-                    className={clsx(prepareColorClassName(color), color === currentColor && styles.active)}
+                    onClick={() => props.action(color)}
+                    className={clsx(
+                      prepareColorClassName(color), color === props.currentColor && styles.active)}
                   />
                 </li>
               ))}
@@ -32,6 +33,7 @@ const OptionColor = props => {
 OptionColor.propTypes = {
   colors: PropTypes.array.isRequired,
   currentColor: PropTypes.string.isRequired,
+  action: PropTypes.func.isRequired
 };
 
 export default OptionColor;
