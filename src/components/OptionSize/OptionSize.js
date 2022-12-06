@@ -12,7 +12,7 @@ const OptionSize = props => {
               {props.sizes.map(size => (
                 <li>
                   <Button
-                    type="button"
+                    type={'button'}
                     onClick={() => {props.action(size.name); 
                      props.additionalPrice(size.additionalPrice)}}
                     className={clsx(size.name === props.currentSize && styles.active)}

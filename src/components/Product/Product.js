@@ -34,7 +34,19 @@ const Product = props => {
           <h2 className={styles.name}>{props.title}</h2>
           <span className={styles.price}>Price: {getPrice()}$</span>
         </header>
-        <ProductForm 
+        <ProductForm
+                 colors={props.colors}
+                 actionColor={setCurrentColor}
+                 currentColor={currentColor}
+                 size={props.size}
+                 actionSize={setCurrentSize}
+                 currentSize={currentSize}
+                 cardData={cardData}
+                 onClick={props.onClick}
+                 price={currentPrice}
+                 actionPrice={setCurrentPrice}
+                 sizes={props.sizes}
+                 type={props.type}
       />
       </div>
     </article>
