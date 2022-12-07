@@ -33,7 +33,7 @@ const OptionColor = props => {
 OptionColor.propTypes = {
   colors: PropTypes.array.isRequired,
   currentColor: PropTypes.string.isRequired,
-  action: PropTypes.func.isRequired
+  actionColor: PropTypes.func.isRequired
 };
 
 export default OptionColor;

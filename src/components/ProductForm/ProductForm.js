@@ -17,9 +17,10 @@ const ProductForm = (props) => {
         <OptionSize
         size={props.size}
         sizes={props.sizes}
-        actionColors={props.action}
+        action={props.actionSize}
         additionalPrice={props.additionalPrice}
         currentSize={props.currentSize}
+        price={props.price}
         />
 
         

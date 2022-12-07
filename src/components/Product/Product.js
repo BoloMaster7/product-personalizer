@@ -25,7 +25,7 @@ const Product = props => {
    }
  
 
-
+return(
     <article className={styles.product}>
       <ProductImage name={props.name} color={currentColor} 
       />
@@ -50,7 +50,7 @@ const Product = props => {
       />
       </div>
     </article>
-         
+);
   }    
 
 Product.propTypes = {
