@@ -1,5 +1,5 @@
 import styles from './ProductForm.module.scss';
-//import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types'; 
 import Button from '../Button/Button';
 import OptionColor from '../OptionColor/OptionColor';
 import OptionSize from '../OptionSize/OptionSize';
@@ -38,16 +38,15 @@ const ProductForm = (props) => {
   );
 };
 
-// ProductForm.propTypes={
- // colors: PropTypes.array.isRequired,
-  //action: PropTypes.func.isRequired,
-  //currentColor: PropTypes.string.isRequired,
-  //sizes: PropTypes.array.isRequired,
-  //actionColors: PropTypes.func.isRequired,
-  //additionalPrice: PropTypes.func.isRequired,
-  //currentSize: PropTypes.string.isRequired,
-
-
-// };
+ProductForm.propTypes={
+  colors: PropTypes.array.isRequired,
+  actionColor: PropTypes.func.isRequired,
+  currentColor: PropTypes.string.isRequired,
+  sizes: PropTypes.array.isRequired,
+  actionSize: PropTypes.func.isRequired,
+  additionalPrice: PropTypes.func.isRequired,
+  currentSize: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+};
 
 export default ProductForm;

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import ProductImage from '../ProductImage/ProductImage';
 import ProductForm from '../ProductForm/ProductForm';
+import { useMemo } from 'react';
 
 
 const Product = props => {
@@ -12,18 +13,19 @@ const Product = props => {
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
   const [currentPrice, setCurrentPrice] = useState(props.sizes[0].additionalPrice);
 
-   const cardData ={
-     name: props.title,
-     price: getPrice(),
-     size: currentSize,
-     color: currentColor
 
-  }
+  function getPrice(a, b) {  
+   return a + b;
+  };
 
-  function getPrice() {
-    return  props.basePrice+ currentPrice;
-   }
+  const totalPrice = useMemo(() => getPrice(props.basePrice, currentPrice), [props.basePrice, currentPrice]);
  
+  const cardData ={
+    name: props.title,
+    price: totalPrice,
+    size: currentSize,
+    color: currentColor
+ }
 
 return(
     <article className={styles.product}>
@@ -32,7 +34,7 @@ return(
          <div>
         <header>
           <h2 className={styles.name}>{props.title}</h2>
-          <span className={styles.price}>Price: {getPrice()}$</span>
+          <span className={styles.price}>Price: {totalPrice}$</span>
         </header>
         <ProductForm
                  colors={props.colors}
