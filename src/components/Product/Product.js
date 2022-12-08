@@ -44,7 +44,7 @@ return(
                  cardData={cardData}
                  onClick={props.onClick}
                  price={currentPrice}
-                 actionPrice={setCurrentPrice}
+                 additionalPrice={setCurrentPrice}
                  sizes={props.sizes}
                  type={props.type}
       />

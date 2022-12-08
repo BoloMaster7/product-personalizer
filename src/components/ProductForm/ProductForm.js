@@ -6,11 +6,16 @@ import OptionSize from '../OptionSize/OptionSize';
 
 const ProductForm = (props) => {
  
+  const summary = (e) => {
+    e.preventDefault();
+    console.log("cardData", props.cardData);
+  }
+
   return (
 <form>
         <OptionColor
         colors={props.colors}
-        actionColors={props.actionColors}
+        actionColor={props.actionColor}
         currentColor={props.currentColor}
         />
 
@@ -24,14 +29,9 @@ const ProductForm = (props) => {
         />
 
         
-        <Button 
-        button={props.button}
-        onClick={(e) => {e.preventDefault(); 
-         
-      }} 
-        className={styles.button}>
-          <span className="fa fa-shopping-cart" />
-        </Button>
+<Button type={"submit"} onClick={summary} className={styles.button}>
+            <span className="fa fa-shopping-cart" />
+          </Button>
       </form>
 
     
